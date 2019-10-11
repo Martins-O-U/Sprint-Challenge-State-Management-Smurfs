@@ -11,11 +11,11 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 smurfs: action.payload,
             }
-        case types.FORM_SUBMIT:
-            return {
-                ...state,
-                smurfs: action.payload
-            }
+        // case types.FORM_SUBMIT:
+        //     return {
+        //         ...state,
+        //         smurfs: action.payload
+        //     }
         default: 
         return state
     }
