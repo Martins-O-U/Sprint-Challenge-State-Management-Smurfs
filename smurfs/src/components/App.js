@@ -4,6 +4,7 @@ import React from 'react';
 import './App.css';
 
 import SmurfVillage from './SmurfVillage';
+import SmurfData from './SmurfData';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       </header>
       <div>
         <SmurfVillage />
+        <SmurfData />
       </div>
     </div>
   );

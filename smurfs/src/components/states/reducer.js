@@ -11,6 +11,23 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 smurfs: action.payload,
             }
+        case types.FORM_SUBMIT:
+            return {
+                ...state,
+                smurfs: action.payload
+            }
+        default: 
+        return state
+    }
+} 
+
+export const dataReducer = (state = initialState, action) => {
+    switch(action.type){
+        case types.FORM_SUBMIT:
+            return {
+                ...state,
+                smurfs: action.payload
+            }
         default: 
         return state
     }

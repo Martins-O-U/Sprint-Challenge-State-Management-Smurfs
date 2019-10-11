@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getSmurf } from './states/actionCreators';
+import { getSmurf} from './states/actionCreators';
 
 const SmurfVillage = ({ smurfs,  getSmurf }) => {
 	useEffect(
@@ -14,8 +14,10 @@ const SmurfVillage = ({ smurfs,  getSmurf }) => {
 		<div>
 			{smurfs.map((smurf) => {
 				return (
-					<div key={smurf.id}>
-						<p>{smurf.name}</p>
+					<div key={smurf.id} className='card'>
+                    <h3>Smurf's Name: {smurf.name}</h3>
+                    <h5>Smurf's Age: {smurf.age}</h5>
+                    <h5>Smurf's Height: {smurf.height}</h5>
 					</div>
 				);
 			})}
@@ -24,11 +26,11 @@ const SmurfVillage = ({ smurfs,  getSmurf }) => {
 };
 
 const mapStateToProps = (state) => {
-    debugger
 	return {
 		smurfs: state.smurfs,
 	};
 };
 
 export default connect(mapStateToProps, { getSmurf })(SmurfVillage);
+
 

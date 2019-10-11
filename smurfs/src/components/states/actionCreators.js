@@ -14,3 +14,17 @@ export const getSmurf = () => {
           });
     }
 } 
+
+
+export const addSmurf = (smurf) => {
+	return dispatch => {
+        axios
+        .post('http://localhost:3333/smurfs', smurf)
+        .then((res) => {
+            console.log(res.data)
+            console.log(smurf)
+			dispatch({ type: types.FORM_SUBMIT, payload: res.data });
+        })
+        .catch(err => console.log(err.message))
+	};
+};
