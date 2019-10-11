@@ -1,25 +1,17 @@
+import React, { Component } from "react";
 
-
-import React from 'react';
-import './App.css';
-
-import SmurfVillage from './SmurfVillage';
-import SmurfData from './SmurfData';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Do you love Smurfs</h1>
-      </header>
-      <div>
-        <SmurfVillage />
-        <SmurfData />
+import Smurf from "./SmurfData";
+import "./App.css";
+import SmurfList from "./SmurfVillage";
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1 className='App-header'>Welcome to Smurf Village</h1>
+        <Smurf />
+        <SmurfList />
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-
-
 export default App;

@@ -1,36 +1,34 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getSmurf} from './states/actionCreators';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import * as actionCreators from "./states/actionCreators";
 
-const SmurfVillage = ({ smurfs,  getSmurf }) => {
-	useEffect(
-		() => {
-			getSmurf();
-		},
-		[ getSmurf ]
-	);
+export function SmurfList({ getSmurf, smurfs }) {
+  useEffect(() => {
+    getSmurf();
+  }, [getSmurf]);
+  return (
+    <>
+      {
+         smurfs.map(smurf => (
+            <div className="card" key={smurf.id}>
+              <div className='name'><i>{smurf.name}</i></div>
+			  <div className='ageHeight'>
+				<div className='age'><strong>Age: </strong> {smurf.age}</div>
+				<div className='height'><strong>Height: </strong>{smurf.height}</div>
+			  </div>
+            </div>
+          ))
+     }
+      {}
+    </>
+  );
+}
 
-	return (
-		<div>
-			{smurfs.map((smurf) => {
-				return (
-					<div key={smurf.id} className='card'>
-                    <h3>Smurf's Name: {smurf.name}</h3>
-                    <h5>Smurf's Age: {smurf.age}</h5>
-                    <h5>Smurf's Height: {smurf.height}</h5>
-					</div>
-				);
-			})}
-		</div>
-	);
-};
-
-const mapStateToProps = (state) => {
-	return {
-		smurfs: state.smurfs,
-	};
-};
-
-export default connect(mapStateToProps, { getSmurf })(SmurfVillage);
-
-
+export default connect(
+  function mapStateToProps(state) {
+    return {
+      smurfs: state.api
+    };
+  },
+  actionCreators
+)(SmurfList);
