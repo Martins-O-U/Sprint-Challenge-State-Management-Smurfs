@@ -14,6 +14,7 @@ export function Smurf({ formValues, changeInput, postSmurfs }) {
 
   return (
     <form className="FormData" onSubmit={onFormSubmit}>
+      <p>Enter villagers details below</p>
       <label>
         Name
         <input
@@ -21,7 +22,7 @@ export function Smurf({ formValues, changeInput, postSmurfs }) {
           value={formValues.name}
           onChange={onValueChange}
           name="name"
-          placeholder="Enter Name"
+          placeholder="Enter Name...."
         />
       </label>
       <br />
@@ -33,7 +34,7 @@ export function Smurf({ formValues, changeInput, postSmurfs }) {
           value={formValues.height}
           onChange={onValueChange}
           name="height"
-          placeholder="Enter Height"
+          placeholder="Enter Height...."
         />
       </label>
       <br />
@@ -45,12 +46,12 @@ export function Smurf({ formValues, changeInput, postSmurfs }) {
           value={formValues.age}
           onChange={onValueChange}
           name="age"
-          placeholder="Enter Age"
+          placeholder="Enter Age...."
         />
       </label>
       <br />
-
-      <input type="submit" />
+      <button>Submit</button>
+      {/* <input type="submit" /> */}
     </form>
   );
 }
